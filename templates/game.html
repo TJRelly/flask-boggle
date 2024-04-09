@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block title %}Boggle{% endblock %}
+
+{% block content %}
+<h1>Let's Play Boggle!</h1>
+<p class="timer">
+    <!-- our JS will dynamically countdown -->
+    Time Left:
+</p>
+<p class="high_score">
+    High Score: {{session.high_score or 0}}
+</p>
+<p class="score">
+    <!-- our JS will dynamically change the score -->
+    Current Score: 0
+</p>
+<p class="games_played">
+    Games Played: {{session.games_played or 0}}
+</p>
+<p class="msg">
+    <!-- our JS will put messages here dynamically -->
+<p>
+<table>
+    {% for row in board %}
+    <tr>
+        {% for cell in row %}
+        <td>{{cell}}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
+<form method="POST">
+    <input class="guess_field" type="text" placeholder="make a guess" name="guess">
+    <input class="guess_submit" type="submit" value="guess">
+</form>
+
+{% endblock %}

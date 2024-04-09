@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <main class="container">
+        {% block content %} {% endblock %}
+    </main>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="../static/script.js"></script>
+</html>
